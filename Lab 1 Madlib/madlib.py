@@ -36,6 +36,9 @@ def adjectives(num):
 	adj5 = adj5Array[num]
 	return adj1, adj2, adj3, adj4, adj5
 
+num = int(adjNum)
+adj1, adj2, adj3, adj4, adj5 = adjectives(num);
+
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
 Dear {mem1},
