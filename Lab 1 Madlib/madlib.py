@@ -28,6 +28,14 @@ adj3Array = ['wonderful', 'salty', 'terrible', 'healthy', 'diverse', 'bland', 'r
 adj4Array = ['close', 'distant', 'good', 'helpful', 'energetic', 'fast', 'easy', 'zealous', 'great', 'silly', 'jolly']
 adj5Array = ['large', 'tall', 'short', 'fat', 'skinny', 'ugly', 'young', 'old', 'lazy', 'shy', 'small']
 
+def adjectives(num):
+	adj1 = adj1Array[num]
+	adj2 = adj2Array[num]
+	adj3 = adj3Array[num]
+	adj4 = adj4Array[num]
+	adj5 = adj5Array[num]
+	return adj1, adj2, adj3, adj4, adj5
+
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
 Dear {mem1},
