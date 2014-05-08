@@ -61,6 +61,21 @@ def nouns(num):
 num = int(noNum)
 noun = nouns(num);
 
+def multiply(num):
+	plural = nounArray[num]
+	if plural.endswith('fe'):
+		plural -= 'fe'
+		plural += 've'
+	elif plural.endswith('s'):
+		plural += 'es'
+	else:
+		plural += 's'
+
+	return plural
+
+plural = multiply(num)
+
+
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
 Dear {mem1},
