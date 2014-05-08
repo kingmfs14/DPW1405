@@ -1,3 +1,9 @@
+#SETTING UP THE INPUT VARIABLES---------------------------------
+
+person = raw_input('enter your name   ')
+name = raw_input("enter a person's name   ")
+adv = raw_input('enter an adverb  ')
+body = raw_input('enter a body part   ')
 
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
@@ -9,5 +15,3 @@ Your {mem2},
 
 message = message.format(**locals())
 print message
-
-
