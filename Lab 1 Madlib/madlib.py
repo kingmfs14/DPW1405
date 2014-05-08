@@ -4,6 +4,20 @@ person = raw_input('enter your name   ')
 name = raw_input("enter a person's name   ")
 adv = raw_input('enter an adverb  ')
 body = raw_input('enter a body part   ')
+memNum = raw_input("enter a number between 0 and 5   ")
+
+#SETTING THE FAMILY MEMBER ROLES---------------------------------
+
+num = int(memNum)
+if num > 3:
+	mem1 = 'grandma'
+	mem2 = 'grandson'
+elif num < 3:
+	mem1 = 'mom'
+	mem2 = 'son'
+else:
+	mem1 = 'sis'
+	mem2 = 'bro'
 
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
