@@ -9,6 +9,7 @@ adjNum = raw_input('enter a number between 1 and 10   ')
 ad = raw_input('enter a verb     ')
 noNum = raw_input('enter a even number between 1 and 6      ')
 pick = raw_input('body, act, do, move, or def?    ')
+act = raw_input('enter an action     ')
 
 #SETTING THE FAMILY MEMBER ROLES---------------------------------
 
@@ -84,6 +85,10 @@ verb1 = verbiage[pick]
 
 verbiage = {'body':'hear','act': 'fall','do':'get','move':'drag','def':'fry'}
 verb2 = verbiage[pick]
+
+#SETTING THE -ING VARIABLE
+
+ing = act + 'ing'
 
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
