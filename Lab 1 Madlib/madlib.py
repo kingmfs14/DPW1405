@@ -7,6 +7,7 @@ body = raw_input('enter a body part   ')
 memNum = raw_input("enter a number between 0 and 5   ")
 adjNum = raw_input('enter a number between 1 and 10   ')
 ad = raw_input('enter a verb     ')
+noNum = raw_input('enter a even number between 1 and 6      ')
 
 #SETTING THE FAMILY MEMBER ROLES---------------------------------
 
@@ -46,6 +47,10 @@ if ad.endswith('e'):
 	ed = ad + 'd'
 else:
 	ed = ad + 'ed'
+
+#SETTING THE NOUN VARIABLES--------------------------------------
+
+nounArray = ['club', 'desk', 'brain', 'knife', 'key', 'nut', 'glass', 'nail', 'stake', 'bolt', 'pencil']
 
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
