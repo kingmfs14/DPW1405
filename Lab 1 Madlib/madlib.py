@@ -83,6 +83,7 @@ verbiage = {'body':'smell' ,'act':'explode' ,'do':'fill' ,'move':'escape' ,'def'
 verb1 = verbiage[pick]
 
 verbiage = {'body':'hear','act': 'fall','do':'get','move':'drag','def':'fry'}
+verb2 = verbiage[pick]
 
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
