@@ -82,6 +82,8 @@ verbiage = dict()
 verbiage = {'body':'smell' ,'act':'explode' ,'do':'fill' ,'move':'escape' ,'def':'groan'}
 verb1 = verbiage[pick]
 
+verbiage = {'body':'hear','act': 'fall','do':'get','move':'drag','def':'fry'}
+
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
 Dear {mem1},
