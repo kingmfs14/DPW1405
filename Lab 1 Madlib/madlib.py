@@ -8,6 +8,7 @@ memNum = raw_input("enter a number between 0 and 5   ")
 adjNum = raw_input('enter a number between 1 and 10   ')
 ad = raw_input('enter a verb     ')
 noNum = raw_input('enter a even number between 1 and 6      ')
+pick = raw_input('body, act, do, move, or def?    ')
 
 #SETTING THE FAMILY MEMBER ROLES---------------------------------
 
@@ -75,6 +76,10 @@ def multiply(num):
 
 plural = multiply(num)
 
+#SETTING THE VERB VARIABLES--------------------------------------
+
+verbiage = dict()
+verbiage = {'body':'smell' ,'act':'explode' ,'do':'fill' ,'move':'escape' ,'def':'groan'}
 
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
