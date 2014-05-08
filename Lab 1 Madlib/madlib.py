@@ -6,6 +6,7 @@ adv = raw_input('enter an adverb  ')
 body = raw_input('enter a body part   ')
 memNum = raw_input("enter a number between 0 and 5   ")
 adjNum = raw_input('enter a number between 1 and 10   ')
+ad = raw_input('enter a verb     ')
 
 #SETTING THE FAMILY MEMBER ROLES---------------------------------
 
@@ -38,6 +39,13 @@ def adjectives(num):
 
 num = int(adjNum)
 adj1, adj2, adj3, adj4, adj5 = adjectives(num);
+
+#SETTING THE ACTION -ED VARIABLE--------------------------------
+
+if ad.endswith('e'):
+	ed = ad + 'd'
+else:
+	ed = ad + 'ed'
 
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
