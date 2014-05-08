@@ -5,6 +5,7 @@ name = raw_input("enter a person's name   ")
 adv = raw_input('enter an adverb  ')
 body = raw_input('enter a body part   ')
 memNum = raw_input("enter a number between 0 and 5   ")
+adjNum = raw_input('enter a number between 1 and 10   ')
 
 #SETTING THE FAMILY MEMBER ROLES---------------------------------
 
@@ -18,6 +19,14 @@ elif num < 3:
 else:
 	mem1 = 'sis'
 	mem2 = 'bro'
+
+#SETTING ALL THE ADJECTIVES UP IN MADLIB------------------------
+
+adj1Array = ['lovely', 'horrible', 'bad', 'nice', 'good', 'difficult', 'meaningful', 'hard', 'wonderful', 'delightful', 'splendid']
+adj2Array = ['nice', 'mean', 'awful', 'tall', 'heroic', 'lean', 'honest', 'fit', 'obedient', 'cheerful', 'talkative']
+adj3Array = ['wonderful', 'salty', 'terrible', 'healthy', 'diverse', 'bland', 'radical', 'burnt', 'fruity', 'greasy', 'hot']
+adj4Array = ['close', 'distant', 'good', 'helpful', 'energetic', 'fast', 'easy', 'zealous', 'great', 'silly', 'jolly']
+adj5Array = ['large', 'tall', 'short', 'fat', 'skinny', 'ugly', 'young', 'old', 'lazy', 'shy', 'small']
 
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
