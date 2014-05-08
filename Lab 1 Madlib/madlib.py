@@ -52,6 +52,15 @@ else:
 
 nounArray = ['club', 'desk', 'brain', 'knife', 'key', 'nut', 'glass', 'nail', 'stake', 'bolt', 'pencil']
 
+def nouns(num):
+	num /= 2
+	num *= 3
+	noun = nounArray[num]
+	return noun
+
+num = int(noNum)
+noun = nouns(num);
+
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
 Dear {mem1},
