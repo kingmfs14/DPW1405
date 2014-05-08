@@ -1,3 +1,10 @@
+'''
+Matthew King
+05/07/2014
+DPW 05 - 2014
+Lab 1 Madlib
+'''
+
 #SETTING UP THE INPUT VARIABLES---------------------------------
 
 person = raw_input('enter your name   ')
