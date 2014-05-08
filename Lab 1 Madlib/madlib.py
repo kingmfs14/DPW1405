@@ -80,6 +80,7 @@ plural = multiply(num)
 
 verbiage = dict()
 verbiage = {'body':'smell' ,'act':'explode' ,'do':'fill' ,'move':'escape' ,'def':'groan'}
+verb1 = verbiage[pick]
 
 #SETTING THE MADLIB TO PRINT THE MESSAGE-------------------------
 message = """
