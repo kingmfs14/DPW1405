@@ -13,6 +13,7 @@ class MainHandler(webapp2.RequestHandler):
 <html>
 	<head>
 		<title>Profile Information Form</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>'''	
 
