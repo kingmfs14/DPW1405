@@ -48,6 +48,10 @@ class MainHandler(webapp2.RequestHandler):
 </html>
         '''
 
+        if self.request.GET:
+        	pass
+        else:
+        	self.response.write(page_head + page_form + page_close)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
