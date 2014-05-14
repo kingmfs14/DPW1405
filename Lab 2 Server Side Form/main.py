@@ -26,6 +26,13 @@ class MainHandler(webapp2.RequestHandler):
 				<label>Email: </label><input type="text" name="email" /> <br>
 				<label>Phone: </label><input type="text" name="phone" />
 			</p>
+			<p>
+				<label>Contact by: <label>
+				<select name="contact">
+					<option value="phone"> Phone </option>
+					<option value="email"> Email </option>
+				</select>
+			</p>
 			<input type="submit" value="Submit" />
 		</form>'''
 
