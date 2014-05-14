@@ -33,6 +33,14 @@ class MainHandler(webapp2.RequestHandler):
 					<option value="email"> Email </option>
 				</select>
 			</p>
+			<p>
+				<label>Expertise: </label><br>
+				<input type="checkbox" name="expertise" value="HTML5" />HTML5 
+				<input type="checkbox" name="expertise" value="CSS3" />CSS3 
+				<input type="checkbox" name="expertise" value="JavaScript" />JavaScript 
+				<input type="checkbox" name="expertise" value="PHP" />PHP 
+				<input type="checkbox" name="expertise" value="Python" />Python 
+			</p>
 			<input type="submit" value="Submit" />
 		</form>'''
 
