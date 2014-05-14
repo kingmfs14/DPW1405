@@ -78,7 +78,12 @@ class MainHandler(webapp2.RequestHandler):
         '''
 
         if self.request.GET:
-        	pass
+        	f_name = self.request.GET['f_name']
+        	l_name = self.request.GET['l_name']
+        	email = self.request.GET['email']
+        	phone = self.request.GET['phone']
+        	contact = self.request.GET['contact']
+        	expertise = self.request.GET['expertise']
         else:
         	self.response.write(page_head + page_form + page_close)
 
