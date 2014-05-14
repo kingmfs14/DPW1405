@@ -44,6 +44,35 @@ class MainHandler(webapp2.RequestHandler):
 			<input type="submit" value="Submit" />
 		</form>'''
 
+	page_info = '''<p>Aloha! Mahalo for taking the time to fill out our form. Please verify that your information is correct.</p>
+		<table>
+			<tr>
+				<th>First Name</th>
+				<td>{f_name}<td>
+			</tr>
+			<tr>
+				<th>Last Name</th>
+				<td>{l_name}<td>
+			</tr>
+			<tr>
+				<th>Phone Number</th>
+				<td>{phone}<td>
+			</tr>
+			<tr>
+				<th>Email Address</th>
+				<td>{email}<td>
+			</tr>
+			<tr>
+				<th>Contact By</th>
+				<td>{contact}<td>
+			</tr>
+			<tr>
+				<th>Expert In</th>
+				<td>{expertise}<td>
+			</tr>
+		</table>
+	'''
+
 	page_close = '''</body>
 </html>
         '''
