@@ -84,6 +84,8 @@ class MainHandler(webapp2.RequestHandler):
         	phone = self.request.GET['phone']
         	contact = self.request.GET['contact']
         	expertise = self.request.GET['expertise']
+        	page_info = page_info.format(**locals())
+        	self.response.write(page_head + page_info + page_close)
         else:
         	self.response.write(page_head + page_form + page_close)
 
