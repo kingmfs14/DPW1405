@@ -8,3 +8,12 @@ class Loan(object):
 		self.__interest = 0
 		self.__total_cost = 0
 
+	@property
+	def payment(self):
+		return self.__payment
+
+	@payment.setter
+	def payment(self, new_payment):
+		self.__payment = new_payment
+
+
