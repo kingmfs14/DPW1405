@@ -129,7 +129,17 @@ class MainHandler(webapp2.RequestHandler):
 </html>'''
 
         if self.request.GET:
-        	pass
+        	name = self.request.GET['name']
+        	title = name + "'s Loan Information"
+        	amount = self.request.GET['amount']
+        	years = self.request.GET['years']
+        	interest_rate = self.request.GET['interest_rate']
+        	payment = self.request.GET['payment']
+        	interest = self.request.GET['interest']
+        	total_cost = self.request.GET['total_cost']
+        	page_info = page_info.format(**locals())
+        	page_head = page_head.format(**locals())
+        	self.response.write(page_head + page_info + page_close)
         else:
         	title = 'Put Off Your Loans?'
         	page_head = page_head.format(**locals())
