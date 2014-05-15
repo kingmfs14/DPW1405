@@ -65,6 +65,36 @@ class MainHandler(webapp2.RequestHandler):
     	f.calc_interest()
     	f.calc_cost()
 
+    	g = Loan()
+    	g.name = 'Gesen'
+    	g.amount = 100000
+    	g.years = 8
+    	g.interest_rate = 6.7
+    	g.calc_payment()
+    	g.calc_interest()
+    	g.calc_cost()
+
+    	page_head = '''<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{title}</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>'''	
+
+	page_home = '''
+		'''
+
+	page_close = '''</body>
+</html>'''
+
+        if self.request.GET:
+        	pass
+        else:
+        	title = 'Put Off Your Loans?'
+        	page_head = page_head.format(**locals())
+        	self.response.write(page_head + page_home + page_close)
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
