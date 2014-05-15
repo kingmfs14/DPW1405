@@ -16,4 +16,11 @@ class Loan(object):
 	def payment(self, new_payment):
 		self.__payment = new_payment
 
+	@property
+	def interest(self):
+		return self.__interest
+
+	@interest.setter
+	def interest(self, new_interest):
+		self.__interest = new_interest
 
