@@ -82,7 +82,7 @@ class MainHandler(webapp2.RequestHandler):
 	</head>
 	<body>'''	
 
-	page_home = '''<h1>Thinking Again About Putting Off Paying Off Your Loans...</h1>
+	page_home = '''<h1>Think Again About Putting Off Paying Off Your Loans...</h1>
 		<p>Take a look at these different student loans from friends of mine. You will be surprised at what shocking information you find out. The amount of the loan, interest rate, and length of loan dramatically plays a role in a higher cost for getting a higher education. Click on any of the below links and you will look at their individual loan situations.</p>
 		<ul>
 			<li><a href="?name={a.name}&amount={a.amount}&years={a.years}&interest_rate={a.interest_rate}&payment={a.payment}&interest={a.interest}&total_cost={a.total_cost}">{a.name}'s $6,000 loan</a></li>
