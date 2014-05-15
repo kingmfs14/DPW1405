@@ -82,7 +82,17 @@ class MainHandler(webapp2.RequestHandler):
 	</head>
 	<body>'''	
 
-	page_home = '''
+	page_home = '''<h1>Thinking Again About Putting Off Paying Off Your Loans...</h1>
+		<p>Take a look at these different student loans from friends of mine. You will be surprised at what shocking information you find out. The amount of the loan, interest rate, and length of loan dramatically plays a role in a higher cost for getting a higher education. Click on any of the below links and you will look at their individual loan situations.</p>
+		<ul>
+			<li><a href="?name={a.name}&amount={a.amount}&years={a.years}&interest_rate={a.interest_rate}&payment={a.payment}&interest={a.interest}&total_cost={a.total_cost}">{a.name}'s $6,000 loan</a></li>
+			<li><a href="?name={b.name}&amount={b.amount}&years={b.years}&interest_rate={b.interest_rate}&payment={b.payment}&interest={b.interest}&total_cost={b.total_cost}">{b.name}'s $7,000 loan</a></li>
+			<li><a href="?name={c.name}&amount={c.amount}&years={c.years}&interest_rate={c.interest_rate}&payment={c.payment}&interest={c.interest}&total_cost={c.total_cost}">{c.name}'s $4,500 loan</a></li>
+			<li><a href="?name={d.name}&amount={d.amount}&years={d.years}&interest_rate={d.interest_rate}&payment={d.payment}&interest={d.interest}&total_cost={d.total_cost}">{d.name}'s $9,000 loan</a></li>
+			<li><a href="?name={e.name}&amount={e.amount}&years={e.years}&interest_rate={e.interest_rate}&payment={e.payment}&interest={e.interest}&total_cost={e.total_cost}">{e.name}'s $10,000 loan</a></li>
+			<li><a href="?name={f.name}&amount={f.amount}&years={f.years}&interest_rate={f.interest_rate}&payment={f.payment}&interest={f.interest}&total_cost={f.total_cost}">{f.name}'s $10,000 loan</a></li>
+			<li><a href="?name={g.name}&amount={g.amount}&years={g.years}&interest_rate={g.interest_rate}&payment={g.payment}&interest={g.interest}&total_cost={g.total_cost}">{g.name}'s $100,000 loan</a></li>
+		</ul>
 		'''
 
 	page_close = '''</body>
@@ -93,6 +103,7 @@ class MainHandler(webapp2.RequestHandler):
         else:
         	title = 'Put Off Your Loans?'
         	page_head = page_head.format(**locals())
+        	page_home = page_home.format(**locals())
         	self.response.write(page_head + page_home + page_close)
 
 
