@@ -43,6 +43,17 @@ class MainHandler(webapp2.RequestHandler):
     	c.calc_cost()
     	print self.response.write("<br> Christie's Loan will have a payment of " + str(c.payment) + " a month. He will pay a total of " + str(c.total_cost) + " including " + str(c.interest) + " in interest total.")
 
+    	#David's Loan Information
+    	d = Loan()
+    	d.name = 'David'
+    	d.amount = 9000
+    	d.years = 3
+    	d.interest_rate = 5.5
+    	d.calc_payment()
+    	d.calc_interest()
+    	d.calc_cost()
+    	print self.response.write("<br> David's Loan will have a payment of " + str(d.payment) + " a month. He will pay a total of " + str(d.total_cost) + " including " + str(d.interest) + " in interest total.")
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
