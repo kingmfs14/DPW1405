@@ -45,3 +45,6 @@ class Loan(object):
 	@total_cost.setter
 	def total_cost(self, new_total_cost):
 		self.__total_cost = new_total_cost
+
+	def calc_cost(self):
+		self.__total_cost = self.amount + self.__interest
