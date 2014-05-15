@@ -95,6 +95,36 @@ class MainHandler(webapp2.RequestHandler):
 		</ul>
 		'''
 
+	page_info = '''<p>Look at what {name} paid on their loan!</p>
+		<table>
+			<tr>
+				<th>Loaned Amount</th>
+				<td>${amount}<td>
+			</tr>
+			<tr>
+				<th>Interest Rate</th>
+				<td>{interest_rate}%<td>
+			</tr>
+			<tr>
+				<th>Length of Loan</th>
+				<td>{years} years<td>
+			</tr>
+			<tr>
+				<th>Monthly Payments</th>
+				<td>${payment}<td>
+			</tr>
+			<tr>
+				<th>Total Interest Paid</th>
+				<td>${interest}<td>
+			</tr>
+			<tr>
+				<th>Total Paid to the Bank</th>
+				<td>${total_cost}<td>
+			</tr>
+		</table>
+		<p><a href="?">Go Back</a></p>
+	'''
+
 	page_close = '''</body>
 </html>'''
 
