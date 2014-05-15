@@ -24,3 +24,10 @@ class Loan(object):
 	def interest(self, new_interest):
 		self.__interest = new_interest
 
+	@property
+	def total_cost(self):
+		return self.__total_cost
+
+	@total_cost.setter
+	def total_cost(self, new_total_cost):
+		self.__total_cost = new_total_cost
