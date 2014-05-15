@@ -31,6 +31,13 @@ class Loan(object):
 	def interest(self, new_interest):
 		self.__interest = new_interest
 
+	def calc_interest(self):
+		self.__month = (self.years * 12) * (-1)
+		self.__ir = (self.interest_rate / 100) / 12
+		self.__calc = (1 + self.__ir) ** self.__month
+		self.__pay = self.amount * (self.__ir / (1 - self.__calc))
+		self.__interest = ((self.__month * (-1)) * self.__pay) - self.amount
+
 	@property
 	def total_cost(self):
 		return self.__total_cost
