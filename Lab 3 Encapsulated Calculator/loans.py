@@ -22,6 +22,7 @@ class Loan(object):
 		self.__ir = (self.interest_rate / 100) / 12
 		self.__calc = (1 + self.__ir) ** self.__month
 		self.__payment = self.amount * (self.__ir / (1 - self.__calc))
+		self.__payment = round(self.__payment, 2)
 
 	@property
 	def interest(self):
@@ -37,6 +38,7 @@ class Loan(object):
 		self.__calc = (1 + self.__ir) ** self.__month
 		self.__pay = self.amount * (self.__ir / (1 - self.__calc))
 		self.__interest = ((self.__month * (-1)) * self.__pay) - self.amount
+		self.__interest = round(self.__interest, 2)
 
 	@property
 	def total_cost(self):
