@@ -16,6 +16,13 @@ class Loan(object):
 	def payment(self, new_payment):
 		self.__payment = new_payment
 
+	def calc_payment(self):
+		self.__month = self.years * 12
+		self.__month = self.__month * (-1)
+		self.__ir = (self.interest_rate / 100) / 12
+		self.__calc = (1 + self.__ir) ** self.__month
+		self.__payment = self.amount * (self.__ir / (1 - self.__calc))
+
 	@property
 	def interest(self):
 		return self.__interest
