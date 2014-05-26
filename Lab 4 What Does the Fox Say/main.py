@@ -52,6 +52,22 @@ class Animal(object): #Animal Abstract class for various other Amazon animals
 		self.habitat = ''
 		self.geoloc = ''
 
+class Kinkajou(Animal): #Kinkajou constructor class using the animal Abstract class
+	def __init__(self):
+		super(Animal, self).__init__() #constructor for super class
+		self.name = 'Kinkajou'
+		self.phylum = 'Chordata'
+		self.clss = 'Mammalia'
+		self.order = 'Carnivora'
+		self.family = 'Procyonidae'
+		self.genus = 'Potos'
+		self.url = 'images/kinkajou.jpg'
+		self.avg = '23 years'
+		self.habitat = 'Forest'
+		self.geoloc = 'Amazon'
+		self.__sounds = []
+		self.sound =''
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
