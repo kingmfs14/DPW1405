@@ -44,6 +44,59 @@ class Page(object): #Page class to write the HTML code
 			<li><a href="?name={e.name}&phylum={e.phylum}&clss={e.clss}&order={e.order}&family={e.family}&genus={e.genus}&url={e.url}&avg={e.avg}&habitat={e.habitat}&geoloc={e.geoloc}&sound={e.sound}">Eel</a></li>
 			<li><a href="?name={f.name}&phylum={f.phylum}&clss={f.clss}&order={f.order}&family={f.family}&genus={f.genus}&url={f.url}&avg={f.avg}&habitat={f.habitat}&geoloc={f.geoloc}&sound={f.sound}">Frog</a></li>
 		</ul>'''
+		#HTML body information tag
+		self.display_info = '''<table id='wrapper'>
+			<tr>
+				<td>		
+					<table>
+						<tr>
+							<th>Phylum:</th>
+							<th>Class:<th>
+						</tr>
+						<tr>
+							<td>{phylum}</td>
+							<td>{clss}<td>
+						</tr>
+						<tr>
+							<th>Order:</th>
+							<th>Family:<th>
+						</tr>
+						<tr>
+							<td>{order}</td>
+							<td>{family}<td>
+						</tr>
+						<tr>
+							<th>Genus:</th>
+							<th>Average Lifespan:<th>
+						</tr>
+						<tr>
+							<td>{genus}</td>
+							<td>{avg}<td>
+						</tr>
+						<tr>
+							<th>Habitat:</th>
+							<th>Geolocation:<th>
+						</tr>
+						<tr>
+							<td>{habitat}</td>
+							<td>{geoloc}<td>
+						</tr>
+						<tr>
+							<th>Sound:</th>
+							<th><th>
+						</tr>
+						<tr>
+							<td>{sound}</td>
+							<td><td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<img src={url} width="300" />
+				</td>
+			</tr>
+		</table>
+		<a href='?'>Go Back</a>'''
 		#HTML closing tag
 		self.page_close = '''</body>
 </html>'''
