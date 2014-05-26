@@ -77,6 +77,15 @@ class Kinkajou(Animal): #Kinkajou constructor class using the animal Abstract cl
 		self.__sounds = []
 		self.sound =''
 
+	@property
+	def sounds(self):
+		pass
+
+	@sounds.setter
+	def sounds(self, arr):
+		self.__sounds = arr
+		self.sound += arr[0]
+
 class Eel(Animal): #Eel constructor class using the animal Abstract class
 	def __init__(self):
 		super(Animal, self).__init__() #constructor for super class
@@ -93,6 +102,15 @@ class Eel(Animal): #Eel constructor class using the animal Abstract class
 		self.__sounds = []
 		self.sound =''
 
+	@property
+	def sounds(self):
+		pass
+
+	@sounds.setter
+	def sounds(self, arr):
+		self.__sounds = arr
+		self.sound += arr[1]
+
 class Frog(Animal): #Frog constructor class using the animal Abstract class
 	def __init__(self):
 		super(Animal, self).__init__() #constructor for super class
@@ -108,6 +126,15 @@ class Frog(Animal): #Frog constructor class using the animal Abstract class
 		self.geoloc = 'Amazon'
 		self.__sounds = []
 		self.sound =''
+
+	@property
+	def sounds(self):
+		pass
+
+	@sounds.setter
+	def sounds(self, arr):
+		self.__sounds = arr
+		self.sound += arr[2]
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
