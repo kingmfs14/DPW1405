@@ -84,6 +84,21 @@ class Eel(Animal): #Eel constructor class using the animal Abstract class
 		self.__sounds = []
 		self.sound =''
 
+class Frog(Animal): #Frog constructor class using the animal Abstract class
+	def __init__(self):
+		super(Animal, self).__init__() #constructor for super class
+		self.name = 'Poison Dart Frog'
+		self.phylum = 'Chordata'
+		self.clss = 'Amphibia'
+		self.order = 'Anura'
+		self.family = 'Dendrobatidae'
+		self.genus = 'Dendrobates'
+		self.url = 'images/frog.jpg'
+		self.avg = '3 to 15 years'
+		self.habitat = 'Tropical Forests'
+		self.geoloc = 'Amazon'
+		self.__sounds = []
+		self.sound =''
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
