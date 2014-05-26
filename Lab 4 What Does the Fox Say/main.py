@@ -9,8 +9,16 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self): #function that starts everything
-    	pass
-   	
+    	p = Page() #assigning the Page class to a variable
+
+        if self.request.GET: #if a request is sent
+        	pass
+        else: #if a request is not sent
+        	title = 'What Does the Amazon Say?' #change the page title
+        	p.page_head = p.page_head.format(**locals()) #format variables in head tag
+        	p.page_nav = p.page_nav.format(**locals()) #format variables in navigation tag
+        	self.response.write(p.page_head + p.page_nav + p.page_close) #write the HTML code on the page
+
 class Page(object): #Page class to write the HTML code
 	def __init__(self):
 		#HTML head tag
