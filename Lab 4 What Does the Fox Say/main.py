@@ -12,10 +12,13 @@ class MainHandler(webapp2.RequestHandler):
     	p = Page() #assigning the Page class to a variable
 
     	k = Kinkajou() #assigning the Kinkajou class to a variable 
+    	k.sounds = ['kit kit kit kow', 'buzz buzz buzz bozz', 'webt webt webt wob'] #creating a sound array with all animal sounds
 
     	e = Eel() #assigning the Eel class to a variable
+    	e.sounds = ['kit kit kit kow', 'buzz buzz buzz bozz', 'webt webt webt wob'] #creating a sound array with all animal sounds
 
     	f = Frog() #assigning the Frog class to a variable
+    	f.sounds = ['kit kit kit kow', 'buzz buzz buzz bozz', 'webt webt webt wob'] #creating a sound array with all animal sounds
 
         if self.request.GET: #if a request is sent
         	pass
