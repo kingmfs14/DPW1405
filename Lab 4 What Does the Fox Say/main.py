@@ -27,6 +27,9 @@ class Page(object): #Page class to write the HTML code
 			<li><a href="?name={e.name}&phylum={e.phylum}&clss={e.clss}&order={e.order}&family={e.family}&genus={e.genus}&url={e.url}&avg={e.avg}&habitat={e.habitat}&geoloc={e.geoloc}&sound={e.sound}">Eel</a></li>
 			<li><a href="?name={f.name}&phylum={f.phylum}&clss={f.clss}&order={f.order}&family={f.family}&genus={f.genus}&url={f.url}&avg={f.avg}&habitat={f.habitat}&geoloc={f.geoloc}&sound={f.sound}">Frog</a></li>
 		</ul>'''
+		#HTML closing tag
+		self.page_close = '''</body>
+</html>'''
 
 class Animal(object): #Animal Abstract class for various other Amazon animals 
 	def __init__(self): 
