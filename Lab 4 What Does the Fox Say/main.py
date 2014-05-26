@@ -11,6 +11,12 @@ class MainHandler(webapp2.RequestHandler):
     def get(self): #function that starts everything
     	p = Page() #assigning the Page class to a variable
 
+    	k = Kinkajou() #assigning the Kinkajou class to a variable 
+
+    	e = Eel() #assigning the Eel class to a variable
+
+    	f = Frog() #assigning the Frog class to a variable
+
         if self.request.GET: #if a request is sent
         	pass
         else: #if a request is not sent
