@@ -68,6 +68,23 @@ class Kinkajou(Animal): #Kinkajou constructor class using the animal Abstract cl
 		self.__sounds = []
 		self.sound =''
 
+class Eel(Animal): #Eel constructor class using the animal Abstract class
+	def __init__(self):
+		super(Animal, self).__init__() #constructor for super class
+		self.name = 'Electric Eel'
+		self.phylum = 'Chordata'
+		self.clss = 'Actinopterygii'
+		self.order = 'gymnotiformes'
+		self.family = 'gymnotidae'
+		self.genus = 'electrophorus'
+		self.url = 'images/eel.jpg'
+		self.avg = '15 years'
+		self.habitat = 'River'
+		self.geoloc = 'Amazon'
+		self.__sounds = []
+		self.sound =''
+
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
