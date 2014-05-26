@@ -21,6 +21,12 @@ class Page(object): #Page class to write the HTML code
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>'''
+		#HTML navigation tag
+		self.page_nav = '''<ul>
+			<li><a href="?name={k.name}&phylum={k.phylum}&clss={k.clss}&order={k.order}&family={k.family}&genus={k.genus}&url={k.url}&avg={k.avg}&habitat={k.habitat}&geoloc={k.geoloc}&sound={k.sound}">Kinkajou</a></li>
+			<li><a href="?name={e.name}&phylum={e.phylum}&clss={e.clss}&order={e.order}&family={e.family}&genus={e.genus}&url={e.url}&avg={e.avg}&habitat={e.habitat}&geoloc={e.geoloc}&sound={e.sound}">Eel</a></li>
+			<li><a href="?name={f.name}&phylum={f.phylum}&clss={f.clss}&order={f.order}&family={f.family}&genus={f.genus}&url={f.url}&avg={f.avg}&habitat={f.habitat}&geoloc={f.geoloc}&sound={f.sound}">Frog</a></li>
+		</ul>'''
 
 class Animal(object): #Animal Abstract class for various other Amazon animals 
 	def __init__(self): 
