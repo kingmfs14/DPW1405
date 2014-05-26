@@ -11,6 +11,10 @@ class MainHandler(webapp2.RequestHandler):
     def get(self): #function that starts everything
     	pass
    	
+class Page(object): #Page class to write the HTML code
+	def __init__(self):
+		pass
+
 class Animal(object): #Animal Abstract class for various other Amazon animals 
 	def __init__(self): 
 		self.name = ''
