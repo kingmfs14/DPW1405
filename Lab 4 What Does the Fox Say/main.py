@@ -21,7 +21,21 @@ class MainHandler(webapp2.RequestHandler):
     	f.sounds = ['kit kit kit kow', 'buzz buzz buzz bozz', 'webt webt webt wob'] #creating a sound array with all animal sounds
 
         if self.request.GET: #if a request is sent
-        	pass
+        	name = self.request.GET['name'] #get the name variable from object clicked
+        	title = name + "'s Information" #set the name vairable in the title object
+	        phylum = self.request.GET['phylum'] #get the phylum variable from object clicked
+	    	clss = self.request.GET['clss'] #get the class variable from object clicked
+	    	order = self.request.GET['order'] #get the order variable from object clicked
+	    	family = self.request.GET['family'] #get the family variable from object clicked
+	    	genus = self.request.GET['genus'] #get the genus variable from object clicked
+	    	url = self.request.GET['url'] #get the url variable from object clicked
+	    	avg = self.request.GET['avg'] #get the average life span variable from object clicked
+	    	habitat = self.request.GET['habitat'] #get the habitat variable from object clicked
+	    	geoloc = self.request.GET['geoloc'] #get the geolocation variable from object clicked
+	    	sound = self.request.GET['sound'] #get the sound variable from object clicked
+        	p.page_head = p.page_head.format(**locals()) #format variables in head tag
+	        p.display_info = p.display_info.format(**locals()) #format variables in information tag
+	        self.response.write(p.page_head + p.display_info + p.page_close) #write the HTML code on the page
         else: #if a request is not sent
         	title = 'What Does the Amazon Say?' #change the page title
         	p.page_head = p.page_head.format(**locals()) #format variables in head tag
