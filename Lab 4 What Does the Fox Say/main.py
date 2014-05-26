@@ -13,7 +13,14 @@ class MainHandler(webapp2.RequestHandler):
    	
 class Page(object): #Page class to write the HTML code
 	def __init__(self):
-		pass
+		#HTML head tag
+		self.page_head = '''<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{title}</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>'''
 
 class Animal(object): #Animal Abstract class for various other Amazon animals 
 	def __init__(self): 
