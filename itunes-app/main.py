@@ -12,7 +12,8 @@ class MainHandler(webapp2.RequestHandler):
         if self.request.GET:
 	        #get info from API
 	        term = self.request.GET['term']
-	        url = 'https://itunes.apple.com/search?' + term
+	        limit = '&limit=200'
+	        url = 'https://itunes.apple.com/search?' + term + limit
 	        #assemble the request
 	        request = urllib2.Request(url)
 	        #use urllib2 to create and object to get the url
@@ -22,11 +23,13 @@ class MainHandler(webapp2.RequestHandler):
 
 	        #parsing with JSON
 	        jsondoc = json.load(result)
+	        print jsondoc
 
-	        name = jsondoc['artistName']
-	        cd = jsondoc['collectionName']
+	        results = jsondoc['results']
+	        name = results[0]['artistName']
+	        cd = results[0]['collectionName']
 
-	        self.response.write("You're Artist Name: "+name+'<br> One of his albums: '+cd)
+	        self.response.write("You're Artist Name: "+name+'<br> Their first album: '+cd)
 
 class Page(object): #borrowing stuff from the object class ABSTRACT CLASS
 	def __init__(self): #constructor
