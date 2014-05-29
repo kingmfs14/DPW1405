@@ -6,7 +6,7 @@ import json
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		p = FormPage()
-		p.inputs = [['term', 'text', 'Song Name or Artist'],['Submit', 'submit']]
+		p.inputs = [['term', 'text', 'Song Name or Artist'],['album', 'artist', 'song'],['Submit', 'submit']]
 		self.response.write(p.print_out())
 
 		if self.request.GET:
@@ -26,14 +26,14 @@ class MainHandler(webapp2.RequestHandler):
 			print result
 
 			#parsing with JSON
-			# jsondoc = json.load(result)
-			# print jsondoc
+			jsondoc = json.load(result)
 
-			# results = jsondoc['results']
-			# name = results[0]['artistName']
-			# cd = results[0]['collectionName']
+			results = jsondoc['results']
+			name = results[0]['artistName']
+			cd = results[0]['collectionName']
+			print jsondoc
 
-			# self.response.write("You're Artist Name: "+name+'<br> Their first album: '+cd)
+			self.response.write("You're Artist Name: "+name+'<br> Their first album: '+cd)
 
 class Page(object): #borrowing stuff from the object class ABSTRACT CLASS
 	def __init__(self): #constructor
@@ -56,10 +56,8 @@ class FormPage(Page):
 		#constructor for the super class
 		#Page.__init__()
 		super(FormPage, self).__init__()
-		self._form_open = '<form method="GET">'
-		self._form_close = '</form>'
 		self.__inputs = []
-		self._form_inputs = ''
+		self._body += '<form method="GET">' #start of form 
 
 	@property
 	def inputs(self):
@@ -69,19 +67,13 @@ class FormPage(Page):
 	def inputs(self, arr):
 		#change my private inputs variable
 		self.__inputs = arr
-		#sort through the mega array and create HTML inputs based on the info there.
-		for item in arr:
-			self._form_inputs += '<input type="' + item[1] + '" name="' + item[0]
-			#if there is a third item... add it in...
-			try:
-				self._form_inputs += '" placeholder="' + item[2] + '" /> <br>'
-			#otherwise... end the tag
-			except:
-				self._form_inputs += '" /> <br>'
-
-	#POLYMORPHISM ALERT!!!-----METHOD OVERRIDE
-	def print_out(self):
-		return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+		#adding text input
+		self._body += '<input type="' + arr[0][1] + '" name="' + arr[0][0] + '" placeholder="' + arr[0][2] + '" /> <br>'
+		#adding select option for user
+		self._body += '<select name="search"><option value="' + arr[1][0] + '">'+arr[1][0]+'</option><option value="' + arr[1][1] + '">'+arr[1][1]+'</option><option value="' + arr[1][2] + '">'+arr[1][2]+'</option></select> <br>'
+		#adding submit button
+		self._body += '<input type="' + arr[2][1] + '" name="' + arr[2][0] + '" /> <br>'
+		self._body += '</form>' #ending of form
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
