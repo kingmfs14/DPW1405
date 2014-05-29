@@ -14,8 +14,19 @@ class MainHandler(webapp2.RequestHandler):
 			term = 'term='
 			term += self.request.GET['term']
 			term = term.replace(' ', '+')
+			entity = '&entity='
+			attr = '&attribute='
 			limit = '&limit=200'
-			url = 'https://itunes.apple.com/search?' + term + limit
+			if self.request.GET['search'] is 'album':
+				entity += 'album'
+				attr += 'albumTerm'
+			elif self.request.GET['search'] is 'artist':
+				entity += 'allArtist'
+				attr += 'allArtistTerm'
+			else:
+				entity += 'allTrack'
+				attr += 'allTrackTerm'
+			url = 'https://itunes.apple.com/search?' + term + entity + attr + limit
 			#assemble the request
 			request = urllib2.Request(url)
 			#use urllib2 to create and object to get the url
