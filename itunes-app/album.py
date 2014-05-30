@@ -10,9 +10,9 @@ class AlbumView(object):
 
 	def update(self):
 		for do in self.__wdos:
-			self.__content += '<td><img src="' + do.cover + '" /></td>'
-			self.__content += '<td>' + do.album + '</td>'
-			self.__content += '<td>' + do.artist + '</td>'
+			self.__content += '<td><img src="' + do.cover + '" /><br>'
+			self.__content += '<h4>' + do.album + '</h4><br>'
+			self.__content +=  do.artist + '</td>'
 			
 		self.__content += '''<tr>
 		</table>'''
