@@ -12,6 +12,7 @@ class MainHandler(webapp2.RequestHandler):
 		title = 'iTunes Album Search Application'
 
 		if self.request.GET: #only if the user clicks on a link
+			title = 'Showing results for "' + self.request.GET['term'] +'"'
 			term = 'term='
 			am = AlbumModel() #creates our model
 			am.term = term
@@ -24,7 +25,9 @@ class MainHandler(webapp2.RequestHandler):
 
 			p._body = av.content
 
-		self.response.write(f.print_out())
+		p = f.print_out()
+		p = p.format(**locals())
+		self.response.write(p)
 
 class Page(object): #borrowing stuff from the object class ABSTRACT CLASS
 	def __init__(self): #constructor
@@ -35,7 +38,7 @@ class Page(object): #borrowing stuff from the object class ABSTRACT CLASS
 	</head>
 	<body>'''
 		#create a navigation to specify search request type
-		self._body = '<h1>What Album are you Looking for?</h1>'
+		self._body = ''
 		self._close = '''</body>
 </html>'''	
 	
@@ -58,6 +61,7 @@ class FormPage(Page):
 	def inputs(self, arr):
 		#change my private inputs variable
 		self.__inputs = arr
+		self._body = '<h1>What Album are you Looking for?</h1>'
 		#adding text input
 		for item in arr:
 			self._body += '<input type="' + item[1] + '" name="' + item[0]
