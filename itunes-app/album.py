@@ -1,3 +1,32 @@
+class AlbumView(object):
+	"""This class handles how the data is shown to the user"""
+	def __init__(self):
+		self.__wdos = []
+		self.__content = '''<table>
+			<tr>'''
+
+	def update(self):
+		for do in self.__wdos:
+			self.__content += '<td><img src="' + do.cover + '" /></td>'
+			self.__content += '<td>' + do.album + '</td>'
+			self.__content += '<td>' + do.artist + '</td>'
+			
+		self.__content += '''<tr>
+		</table>'''
+
+
+	@property
+	def content(self):
+		return self.__content
+
+	@property
+	def wdos(self):
+		pass
+
+	@wdos.setter
+	def wdos(self, arr):
+		self.__wdos = arr
+		self.update()
 
 class AlbumModel(object):
 	"""This model handles fetching, parsing, and sorting data from Itunes API"""	        
