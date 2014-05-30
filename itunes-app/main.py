@@ -9,18 +9,19 @@ class MainHandler(webapp2.RequestHandler):
 		f.inputs = [['term', 'text', 'Album Keyword'],['Submit', 'submit']]
 		title = 'iTunes Album Search Application'
 
-		if self.request.GET: #only if the user clicks on a link
+		if self.request.GET: #only if the user searches
 			title = 'Showing results for "' + self.request.GET['term'] +'"'
-			term = 'term='
+			term = 'term=' #creates paramaters needed for API
 			am = AlbumModel() #creates our model
-			term += self.request.GET['term'] #sends our ZIP from the URL to our model
-			am.term = term.replace(' ', '+')
+			term += self.request.GET['term'] #grabs term and adds it parameter
+			am.term = term.replace(' ', '+') #sends term from the URL to our model
 			am.callApi() #tells it to connect to the API
 
 			av = AlbumView() #creates our view
 			av.wdos = am.dos #takes data objects from model class and give them to view
 
-			f._body = av.content
+			f._body = '<h2>Showing results for "' + self.request.GET['term'] +'"</h2>' #creates heading for page
+			f._body += av.content #adds information from album file to page
 
 		p = f.print_out()
 		p = p.format(**locals())
@@ -48,7 +49,7 @@ class FormPage(Page):
 		#Page.__init__()
 		super(FormPage, self).__init__()
 		self.__inputs = []
-		self._body = '''<h1>What Album are you Looking for?</h1>
+		self._body = '''<h2>What Album are you Looking for?</h2>
 		<form method="GET">''' #start of form 
 
 	@property
