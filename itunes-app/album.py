@@ -1,3 +1,6 @@
+import urllib2 #python classes and code needed to request info, receive, and open
+import json
+
 class AlbumView(object):
 	"""This class handles how the data is shown to the user"""
 	def __init__(self):

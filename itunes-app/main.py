@@ -1,7 +1,5 @@
  
 import webapp2
-import urllib2 #python classes and code needed to request info, receive, and open
-import json
 from album import AlbumModel
 from album import AlbumView
 
