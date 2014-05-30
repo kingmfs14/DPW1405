@@ -15,9 +15,8 @@ class MainHandler(webapp2.RequestHandler):
 			title = 'Showing results for "' + self.request.GET['term'] +'"'
 			term = 'term='
 			am = AlbumModel() #creates our model
-			am.term = term
-			am.term += self.request.GET['term'] #sends our ZIP from the URL to our model
-			am.term = self.__term.replace(' ', '+')
+			term += self.request.GET['term'] #sends our ZIP from the URL to our model
+			am.term = term.replace(' ', '+')
 			am.callApi() #tells it to connect to the API
 
 			av = AlbumView() #creates our view
@@ -51,7 +50,8 @@ class FormPage(Page):
 		#Page.__init__()
 		super(FormPage, self).__init__()
 		self.__inputs = []
-		self._body = '<form method="GET">' #start of form 
+		self._body = '''<h1>What Album are you Looking for?</h1>
+		<form method="GET">''' #start of form 
 
 	@property
 	def inputs(self):
@@ -61,7 +61,6 @@ class FormPage(Page):
 	def inputs(self, arr):
 		#change my private inputs variable
 		self.__inputs = arr
-		self._body = '<h1>What Album are you Looking for?</h1>'
 		#adding text input
 		for item in arr:
 			self._body += '<input type="' + item[1] + '" name="' + item[0]
