@@ -2,65 +2,40 @@
 import webapp2
 import urllib2 #python classes and code needed to request info, receive, and open
 import json
+from album import AlbumModel
+from album import AlbumView
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
-		p = Page()
-		self.response.write(p.print_out())
 		f = FormPage()
-		f.inputs = [['term', 'text', 'Song Name or Artist'],['Submit', 'submit']]
+		f.inputs = [['term', 'text', 'Album Keyword'],['Submit', 'submit']]
+		title = 'iTunes Album Search Application'
 
-		if self.request.GET:
-			self.response.write(f.print_out())
-			if self.request.GET['search'] is 'album':
-				entity += 'album'
-				attr += 'albumTerm'
-			elif self.request.GET['search'] is 'artist':
-				entity += 'allArtist'
-				attr += 'allArtistTerm'
-			else:
-				entity += 'allTrack'
-				attr += 'allTrackTerm'
-			#get info from API
+		if self.request.GET: #only if the user clicks on a link
 			term = 'term='
-			term += self.request.GET['term']
-			term = term.replace(' ', '+')
-			entity = '&entity='
-			attr = '&attribute='
-			limit = '&limit=200'
-			url = 'https://itunes.apple.com/search?' + term + entity + attr + limit
-			#assemble the request
-			request = urllib2.Request(url)
-			#use urllib2 to create and object to get the url
-			opener = urllib2.build_opener()
-			#use the url to get a result - request info from API
-			result = opener.open(request)
+			am = AlbumModel() #creates our model
+			am.term = term
+			am.term += self.request.GET['term'] #sends our ZIP from the URL to our model
+			am.term = self.__term.replace(' ', '+')
+			am.callApi() #tells it to connect to the API
 
-			#parsing with JSON
-			jsondoc = json.load(result)
+			av = AlbumView() #creates our view
+			av.wdos = am.dos #takes data objects from model class and give them to view
 
-			results = jsondoc['results']
-			name = results[0]['artistName']
-			cd = results[0]['collectionName']
-			print jsondoc
+			p._body = av.content
 
-			self.response.write("You're Artist Name: "+name+'<br> Their first album: '+cd)
+		self.response.write(f.print_out())
 
 class Page(object): #borrowing stuff from the object class ABSTRACT CLASS
 	def __init__(self): #constructor
 		self._head = '''<!DOCTYPE HTML>
 <html>
 	<head>
-		<title>iTunes Search Application</title>
+		<title>{title}</title>
 	</head>
 	<body>'''
 		#create a navigation to specify search request type
-		self._body = '''<h1>What Do You Want to Search For?</h1>
-		<ul>
-			<li><a href='search="album"'>An Album</a></li>
-			<li><a href='search="artist"'>An Artist</a></li>
-			<li><a href='search="song"'>A Song</a></li>
-		</ul>'''
+		self._body = '<h1>What Album are you Looking for?</h1>'
 		self._close = '''</body>
 </html>'''	
 	
@@ -73,7 +48,7 @@ class FormPage(Page):
 		#Page.__init__()
 		super(FormPage, self).__init__()
 		self.__inputs = []
-		self._body += '<form method="GET">' #start of form 
+		self._body = '<form method="GET">' #start of form 
 
 	@property
 	def inputs(self):
@@ -94,6 +69,9 @@ class FormPage(Page):
 				self._body += '" /> <br>'
 
 		self._body += '</form>' #ending of form
+
+	def print_out(self):
+		return self._head + self._body + self._close
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
