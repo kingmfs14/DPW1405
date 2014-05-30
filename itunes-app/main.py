@@ -20,7 +20,7 @@ class MainHandler(webapp2.RequestHandler):
 			av = AlbumView() #creates our view
 			av.wdos = am.dos #takes data objects from model class and give them to view
 
-			p._body = av.content
+			f._body = av.content
 
 		p = f.print_out()
 		p = p.format(**locals())
