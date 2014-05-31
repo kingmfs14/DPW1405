@@ -6,8 +6,8 @@ from album import AlbumView
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		f = FormPage()
-		f.inputs = [['term', 'text', 'Album Keyword']]
-		title = 'iTunes Album Search Application'
+		f.inputs = [['term', 'text', 'Album Keyword']] #form inputs
+		title = 'iTunes Album Search Application' #home page title
 
 		if self.request.GET: #only if the user searches
 			title = 'Showing results for "' + self.request.GET['term'] +'"'
@@ -23,9 +23,9 @@ class MainHandler(webapp2.RequestHandler):
 			f._body = '<h2>Showing results for "' + self.request.GET['term'] +'"</h2>' #creates heading for page
 			f._body += av.content #adds information from album file to page
 
-		p = f.print_out()
-		p = p.format(**locals())
-		self.response.write(p)
+		p = f.print_out() #call print_out function
+		p = p.format(**locals()) #create dynamic content
+		self.response.write(p) #write information in HTML format
 
 class Page(object): #borrowing stuff from the object class ABSTRACT CLASS
 	def __init__(self): #constructor

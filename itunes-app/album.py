@@ -8,32 +8,31 @@ class AlbumView(object):
 		self.__content = '''<table>
 			<tr>
 				<td><h3>Albums</h3></td>
-			</tr>
-		'''
+			</tr>''' #starting table tag
 
 	def update(self):
 		count = 0
 		for do in self.__wdos:
-			remainder = count % 5
-			if remainder == 0: 
-				self.__content += '<tr>'
+			remainder = count % 5 #max items per row
+			if remainder == 0: #to start a row
+				self.__content += '<tr>' 
 				self.__content += '<td><img src="' + do.cover + '" /><br>'
 				self.__content += '<h4>' + do.album + '</h4>'
 				self.__content +=  '<p>' + do.artist + '</p></td>'
 				count += 1
-			elif remainder == 4:
+			elif remainder == 4: #to end a row
 				self.__content += '<td><img src="' + do.cover + '" /><br>'
 				self.__content += '<h4>' + do.album + '</h4>'
 				self.__content +=  '<p>' + do.artist + '</p></td>'
 				self.__content += '</tr>'
 				count += 1
-			else:
+			else: #in the middle of the start and end of a row
 				self.__content += '<td><img src="' + do.cover + '" /><br>'
 				self.__content += '<h4>' + do.album + '</h4>'
 				self.__content +=  '<p>' + do.artist + '</p></td>'
 				count += 1
 			
-		self.__content += '</table>'
+		self.__content += '</table>' # ending table tag
 
 
 	@property
