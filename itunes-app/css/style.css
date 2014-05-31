@@ -1,0 +1,16 @@
+body{
+	width: 80%;
+	background-color: #c2c2c2;
+	margin: 0 10%;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+td{
+	color: #09C;
+	padding-left: 10px;
+}
+h3, h4{
+	color: #000;
+}
+table{
+}
