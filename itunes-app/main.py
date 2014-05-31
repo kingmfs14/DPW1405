@@ -6,7 +6,7 @@ from album import AlbumView
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		f = FormPage()
-		f.inputs = [['term', 'text', 'Album Keyword'],['Submit', 'submit']]
+		f.inputs = [['term', 'text', 'Album Keyword']]
 		title = 'iTunes Album Search Application'
 
 		if self.request.GET: #only if the user searches
@@ -33,6 +33,7 @@ class Page(object): #borrowing stuff from the object class ABSTRACT CLASS
 <html>
 	<head>
 		<title>{title}</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>'''
 		#create a navigation to specify search request type
