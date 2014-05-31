@@ -50,7 +50,7 @@ class FormPage(Page):
 		#Page.__init__()
 		super(FormPage, self).__init__()
 		self.__inputs = []
-		self._body = '''<h2>What Album are you Looking for?</h2>
+		self._body = '''<h1>What Album are you Looking for?</h1>
 		<form method="GET">''' #start of form 
 
 	@property

@@ -1,16 +1,18 @@
 body{
 	width: 80%;
-	background-color: #c2c2c2;
+	background-image: url(../images/bg.jpg);
 	margin: 0 10%;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	text-align: center;
 }
-td{
-	color: #09C;
-	padding-left: 10px;
+p{
+	margin-top: 0;
+	color: #666;
 }
-h3, h4{
-	color: #000;
-}
+h1{margin-top: 15%}
+h4{margin-bottom: 0;}
 table{
+	text-align: left;
+	width: 100%;
+	margin-left: 10%;
 }
