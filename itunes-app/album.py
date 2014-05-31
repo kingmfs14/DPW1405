@@ -14,14 +14,14 @@ class AlbumView(object):
 	def update(self):
 		count = 0
 		for do in self.__wdos:
-			remainder = count % 4
+			remainder = count % 5
 			if remainder == 0: 
 				self.__content += '<tr>'
 				self.__content += '<td><img src="' + do.cover + '" /><br>'
 				self.__content += '<h4>' + do.album + '</h4>'
 				self.__content +=  '<p>' + do.artist + '</p></td>'
 				count += 1
-			elif remainder == 3:
+			elif remainder == 4:
 				self.__content += '<td><img src="' + do.cover + '" /><br>'
 				self.__content += '<h4>' + do.album + '</h4>'
 				self.__content +=  '<p>' + do.artist + '</p></td>'
