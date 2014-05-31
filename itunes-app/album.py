@@ -6,16 +6,34 @@ class AlbumView(object):
 	def __init__(self):
 		self.__wdos = []
 		self.__content = '''<table>
-			<tr>'''
+			<tr>
+				<td><h3>Albums</h3></td>
+			</tr>
+		'''
 
 	def update(self):
+		count = 0
 		for do in self.__wdos:
-			self.__content += '<td><img src="' + do.cover + '" /><br>'
-			self.__content += '<h4>' + do.album + '</h4><br>'
-			self.__content +=  do.artist + '</td>'
+			remainder = count % 4
+			if remainder == 0: 
+				self.__content += '<tr>'
+				self.__content += '<td><img src="' + do.cover + '" /><br>'
+				self.__content += '<h4>' + do.album + '</h4>'
+				self.__content +=  '<p>' + do.artist + '</p></td>'
+				count += 1
+			elif remainder == 3:
+				self.__content += '<td><img src="' + do.cover + '" /><br>'
+				self.__content += '<h4>' + do.album + '</h4>'
+				self.__content +=  '<p>' + do.artist + '</p></td>'
+				self.__content += '</tr>'
+				count += 1
+			else:
+				self.__content += '<td><img src="' + do.cover + '" /><br>'
+				self.__content += '<h4>' + do.album + '</h4>'
+				self.__content +=  '<p>' + do.artist + '</p></td>'
+				count += 1
 			
-		self.__content += '''<tr>
-		</table>'''
+		self.__content += '</table>'
 
 
 	@property
